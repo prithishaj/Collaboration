@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div ng-show="currentUser==''">
+<div class="alert alert-danger fade in">
+<div>
+You are not logged in...<a href="#/login">Please Login here to create a blog</a>
+</div>
+<div>
+If you are not register,<a href="#/login">You can register here</a>
+</div>
+</div>
+
+<div ng-hide="currentUser==''">
+<div class="generic-container" ng-controller="BlogController as ctrl">
+<form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
+<label>Please fill the blog details...</label>
+</div>
+</div>
+
+<div class="row">
+<div class="form-group col-md-12">
+<label class="col-md-2 control-label" for="title">Title</label>
+<div class="col-md-7">
+<input type="text" ng-model="ctrl.blog.title" id="title" class="title form-control input-sm"
+placeholder="Enter Blog Title" required ng-minlength="50" ng-maxlenth="500">
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="form-group col-md-12">
+<label class="col-md-2 control-label" for="description">Description</label>
+<div class="col-md-7">
+<textarea rows="100" cols="300" ng-model="ctrl.blog.description" id="description" class="description form-control input-sm"
+placeholder="Enter Blog Description" required ng-minlength="50" ng-maxlenth="500">
+</textarea>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="form-actions floatRight">
+<input type="submit" value="Create Blog" class="btn btn-primary btn-sm">
+<button type="button" ng-click="ctrl.rest()" class="btn btn-warning btn-sm">Reset Blog</button>
+</div>
+</div>
+</form>
+</div>
+
+</body>
+</html>

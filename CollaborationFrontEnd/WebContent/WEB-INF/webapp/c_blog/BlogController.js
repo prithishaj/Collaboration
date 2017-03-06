@@ -1,0 +1,18 @@
+app.service('BlogController', function($scope,BlogService){
+	
+	console.log("BlogController")
+	$scope.messages=[];
+	$scope.message="";
+	$scope.max=140;
+	
+	$scope.addMessage=function(){
+		console.log("addMessage")
+		BlogService.send(message,$scope,friendID);
+		$scope.message="";	
+	};
+	
+	BlogService.receive().then(null,null,function(message){
+		console.log("receive")
+		$scope.messages.push(message);
+	});
+});

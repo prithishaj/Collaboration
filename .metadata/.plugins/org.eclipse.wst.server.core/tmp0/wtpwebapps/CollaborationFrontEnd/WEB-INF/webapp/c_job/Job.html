@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+	<div ng-app="myApp" ng-controller="JobController as cntrl">
+
+		<div ng-repeat="job in cntrl.jobs">
+		    {{job.id}}
+			{{job.title}}
+		</div>
+
+	</div>
+
+	<script src="WebContent/WEB-INF/webapp/c_job/JobController.js"></script>
+	<script src="WebContent/WEB-INF/webapp/c_job/JobService.js"></script>
+
+</body>
+</html>
